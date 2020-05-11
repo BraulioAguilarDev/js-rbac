@@ -1,4 +1,4 @@
-# BRBAC
+# JS-RBAC
 
 A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELETE, LIST.
 
