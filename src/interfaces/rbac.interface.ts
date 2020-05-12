@@ -1,4 +1,4 @@
-export interface Options {
+export interface RbacOptions {
   username: string;
   password: string;
   vaultApi: string;

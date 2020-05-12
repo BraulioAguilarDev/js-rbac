@@ -1,6 +1,7 @@
 import { BadRequest, VaultError }  from './errors';
+import { Headers } from './interfaces/headers.interface'
 
-export async function VerifyHeadersAndGetToken(headers: any): Promise<string> {
+export async function VerifyHeadersAndGetToken(headers: Headers): Promise<string> {
   const BEARER = 'Bearer';
 
   try {

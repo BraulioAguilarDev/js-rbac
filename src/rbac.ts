@@ -1,7 +1,8 @@
 import * as fetch from 'node-fetch';
 import * as path from 'path';
-import * as admin from 'firebase-admin';
-import { Options } from './interfaces/rbac.interface';
+import * as firebase from 'firebase-admin';
+import { RbacOptions } from './interfaces/rbac.interface';
+import { Headers } from './interfaces/headers.interface';
 import { GetRoles } from './roles';
 import { VaultError, FirebaseError } from './errors';
 import { VaultApiClient } from './vault';
@@ -17,20 +18,21 @@ class RBAC {
   /**
    * Firebase SDK instance
    */
-  public FirebaseAdmin: any;
+  public Firebase: any;
 
   /**
    * node-vault instance to requests
-   * Get roleID for role auth
-   * Get secretId for gole auth
+   * You can get roleID for role auth
+   * You cat get secretId for role auth
    * https://github.com/kr1sp1n/node-vault
    */
   private vaultClient: any
 
-  /**
-   * @param opts Options
-   */
-  constructor(opts: Options) {
+/**
+ * 
+ * @param opts RbacOptions
+ */
+  constructor(opts: RbacOptions) {
     this.username = opts.username;
     this.password = opts.password;
     this.vaultApi = opts.vaultApi;
@@ -38,8 +40,8 @@ class RBAC {
     this.rolesApi = opts.rolesApi;
 
     // instance for verifyIdToken function with SDK
-    this.FirebaseAdmin = admin.initializeApp({
-      credential: admin.credential.cert(path.join(this.firebase)),
+    this.Firebase = firebase.initializeApp({
+      credential: firebase.credential.cert(path.join(this.firebase)),
     });
   }
 
@@ -90,7 +92,7 @@ class RBAC {
    */
   private async verifyToken(token: string): Promise<any> {
     try {
-      return await this.FirebaseAdmin.auth().verifyIdToken(token);
+      return await this.Firebase.auth().verifyIdToken(token);
     } catch (error) {
       throw new FirebaseError(error.errorInfo.message);
     }
@@ -146,7 +148,7 @@ class RBAC {
    * @param method
    * @param path
    */
-  private async authorizer(headers: object, method: string, path: string): Promise<boolean> {
+  private async authorizer(headers: Headers, method: string, path: string): Promise<boolean> {
     try {
       // Check headers keys and return authorization value
       const stringToken = await VerifyHeadersAndGetToken(headers);
