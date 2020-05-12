@@ -35,5 +35,5 @@ $ yarn build
 $ cd test & yarn test
 ```
 
-## Exemples
-* [ExpressJS]()
+## Examples
+* [ExpressJS](https://github.com/ExponentialEducation/js-rbac/tree/feature/develop/examples/express)
