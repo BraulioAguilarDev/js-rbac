@@ -31,7 +31,7 @@ export class VaultApiClient {
    * @param roleName
    * @returns Token string
    */
-  private async LoginAsRole(roleName: String): Promise<String> {
+  async LoginAsRole(roleName: string): Promise<string> {
     //GET: /auth/approle/role/:role_name/role-id
     const roleId = await this.client.getApproleRoleId({ role_name: roleName })
       .then((result: any) => {

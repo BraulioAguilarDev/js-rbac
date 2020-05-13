@@ -1,11 +1,11 @@
 import * as fetch from 'node-fetch';
 import * as path from 'path';
 import * as firebase from 'firebase-admin';
-import { RbacOptions } from './interfaces/rbac.interface';
-import { Headers } from './interfaces/headers.interface';
 import { GetRoles } from './roles';
-import { VaultError, FirebaseError } from './errors';
 import { VaultApiClient } from './vault';
+import { Headers } from './interfaces/headers.interface';
+import { RbacOptions } from './interfaces/rbac.interface';
+import { VaultError, FirebaseError } from './errors';
 import { VerifyHeadersAndGetToken } from './headers';
 
 class RBAC {
@@ -18,7 +18,7 @@ class RBAC {
   /**
    * Firebase SDK instance
    */
-  public Firebase: any;
+  public Firebase: firebase.app.App
 
   /**
    * node-vault instance to requests
@@ -26,7 +26,7 @@ class RBAC {
    * You cat get secretId for role auth
    * https://github.com/kr1sp1n/node-vault
    */
-  private vaultClient: any
+  private vaultClient: VaultApiClient
 
 /**
  * 
