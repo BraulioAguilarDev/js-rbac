@@ -36,4 +36,4 @@ $ cd test & yarn test
 ```
 
 ## Examples
-* [ExpressJS](https://github.com/ExponentialEducation/js-rbac/tree/feature/develop/examples/express)
+* [ExpressJS](https://github.com/ExponentialEducation/js-rbac/tree/develop/examples/express)

@@ -38,7 +38,7 @@ async function validaUser(req, res, next) {
     // example path tu use, "v1/data/lms/programs"
     var path = req.path.substring(1);
     
-    // Main parmas
+    // Main params
     const granted = await rbac.authorizer(custumHeaders, req.method, path);
     
     if (!granted) {
