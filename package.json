@@ -1,0 +1,31 @@
+{
+  "name": "js-rbac",
+  "version": "0.0.1",
+  "description": "A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELETE.",
+  "main": "dist/rbac.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc -w"
+  },
+  "keywords": [
+    "vault",
+    "rbac"
+  ],
+  "author": "Braulio Aguilar <braulio@bedu.org>",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^8.11.0",
+    "node-fetch": "^2.6.0",
+    "node-vault": "^0.9.15",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.2",
+    "typescript": "^3.8.3",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.4.0",
+    "jest": "^25.4.0"
+  }
+}

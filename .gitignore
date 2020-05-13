@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.vscode/
+tests/*.json
+examples/express/node_modules
+examples/express/*.json

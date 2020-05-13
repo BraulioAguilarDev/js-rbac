@@ -1,4 +1,4 @@
-# BRBAC
+# JS-RBAC
 
 A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELETE, LIST.
 
@@ -35,5 +35,5 @@ $ yarn build
 $ cd test & yarn test
 ```
 
-## Exemples
-* [ExpressJS]()
+## Examples
+* [ExpressJS](https://github.com/ExponentialEducation/js-rbac/tree/feature/develop/examples/express)
