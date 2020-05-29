@@ -17,8 +17,6 @@ FIREBASE_CLIENTEMAIL=test_client
 FIREBASE_PRIVATEKEY=test_private_key
 ```
 
-Copy `.json` to `test/` and `examples/express/` folders.
-
 ## Install (TODO)
 ```shell
 $ npm <npm-project> install --save
