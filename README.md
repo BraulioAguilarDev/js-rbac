@@ -6,10 +6,16 @@ A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELE
 * [Roles & Profiles microservice](https://github.com/ExponentialEducation/roles-profiles-microservice)
 * [Account microservice](https://github.com/ExponentialEducation/account-microservice)
 * [Vault Server & Policies](https://github.com/braulioinf/vault-poc)
-* [Firebase Certs](https://github.com/braulioinf/brbac#firebase)
 
-## Firebase Certs
-JSON firebase (required) in test path [Firebase Cert](https://raw.githubusercontent.com/ExponentialEducation/account-microservice/develop/firebase-admin.development.json?token=AANUGYNMJHMNP6INZE6BHT26YMEEE)
+## Firebase config
+
+Use .env file
+
+```js
+FIREBASE_PROJECTID=test_project
+FIREBASE_CLIENTEMAIL=test_client
+FIREBASE_PRIVATEKEY=test_private_key
+```
 
 Copy `.json` to `test/` and `examples/express/` folders.
 
