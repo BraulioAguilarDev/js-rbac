@@ -6,13 +6,11 @@ const RBAC = require('../../dist/rbac')
 const VAULT_API = "https://vault.pitakill.net:8200"
 const USERNAME = "authorizer"
 const VAULT_PASSWORD = "helloworld"
-const FIREBASE_CONFIG = "firebase-admin.development.json"
 const ROLE_API = "http://localhost:8080"
 
 const options = {
   "username": USERNAME,
   "password": VAULT_PASSWORD,
-  "firebase": FIREBASE_CONFIG,
   "vaultApi": VAULT_API,
   "rolesApi": ROLE_API
 };
@@ -31,13 +29,14 @@ async function validaUser(req, res, next) {
   try {
     // Set headers for dummy request without Authorization header
     // When login implemented remove this
+    const { authorization } = req.headers;
     const custumHeaders = Object.assign({}, req.headers, {
-      'Authorization': 'Bearer <Replace for Firebase Token>'
+      'Authorization': authorization,
     });
 
     // example path tu use, "v1/data/lms/programs"
     var path = req.path.substring(1);
-    
+
     // Main params
     const granted = await rbac.authorizer(custumHeaders, req.method, path);
     

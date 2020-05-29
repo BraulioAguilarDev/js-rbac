@@ -3,13 +3,11 @@ const RBAC = require('./../dist/rbac')
 const VAULT_API = "https://vault.pitakill.net:8200"
 const USERNAME = "authorizer"
 const VAULT_PASSWORD = "helloworld"
-const FIREBASE_CONFIG = __dirname + "/firebase-admin.development.json"
 const ROLES_API = "http://localhost:8080"
 
 const Options = {
   username: USERNAME,
   password: VAULT_PASSWORD,
-  firebase: FIREBASE_CONFIG,
   vaultApi: VAULT_API,
   rolesApi: ROLES_API
 };

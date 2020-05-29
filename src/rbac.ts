@@ -1,5 +1,4 @@
 import * as fetch from 'node-fetch';
-import * as path from 'path';
 import * as firebase from 'firebase-admin';
 import { GetRoles } from './roles';
 import { VaultApiClient } from './vault';
@@ -13,7 +12,6 @@ class RBAC {
   private password: string;
   private vaultApi: string;
   private rolesApi: string;
-  private firebase: string;
 
   /**
    * Firebase SDK instance
@@ -36,12 +34,15 @@ class RBAC {
     this.username = opts.username;
     this.password = opts.password;
     this.vaultApi = opts.vaultApi;
-    this.firebase = opts.firebase;
     this.rolesApi = opts.rolesApi;
 
     // instance for verifyIdToken function with SDK
     this.Firebase = firebase.initializeApp({
-      credential: firebase.credential.cert(path.join(this.firebase)),
+      credential: firebase.credential.cert({
+        projectId: process.env.FIREBASE_PROJECTID,
+        clientEmail: process.env.FIREBASE_CLIENTEMAIL,
+        privateKey: process.env.FIREBASE_PRIVATEKEY.replace(/\\n/g, '\n'),
+      }),
     });
   }
 
