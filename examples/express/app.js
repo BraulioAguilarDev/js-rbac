@@ -3,7 +3,7 @@
 const express = require('express');
 const RBAC = require('../../dist/rbac')
 
-const VAULT_API = "https://vault.pitakill.net:8200"
+const VAULT_API = "http://127.0.0.1:8200"
 const USERNAME = "authorizer"
 const VAULT_PASSWORD = "helloworld"
 const ROLE_API = "http://localhost:8080"

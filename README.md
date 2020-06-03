@@ -5,22 +5,7 @@ A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELE
 ## Depends on
 * [Roles & Profiles microservice](https://github.com/ExponentialEducation/roles-profiles-microservice)
 * [Account microservice](https://github.com/ExponentialEducation/account-microservice)
-* [Vault Server & Policies](https://github.com/braulioinf/vault-poc)
-
-## Firebase config
-
-Use .env file
-
-```js
-FIREBASE_PROJECTID=test_project
-FIREBASE_CLIENTEMAIL=test_client
-FIREBASE_PRIVATEKEY=test_private_key
-```
-
-## Install (TODO)
-```shell
-$ npm <npm-project> install --save
-```
+* [Vault](https://github.com/ExponentialEducation/vault)
 
 ## Quickstart
 ```js
@@ -33,7 +18,7 @@ const granted = rbac.authorizer(headers, method, path);
 
 ## Test
 ```shell
-$ git clone git@github.com:braulioinf/brbac.git
+$ git clone git@github.com:ExponentialEducation/js-rbac.git
 $ cd project & npm install
 $ yarn build
 $ cd test & yarn test
