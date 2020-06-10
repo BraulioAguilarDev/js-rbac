@@ -4,6 +4,7 @@
   "description": "A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELETE.",
   "main": "dist/rbac.js",
   "scripts": {
+    "prepare": "npm run test && npm run build",
     "test": "jest",
     "build": "tsc -w"
   },
