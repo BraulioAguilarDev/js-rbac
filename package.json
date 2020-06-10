@@ -6,14 +6,15 @@
   "scripts": {
     "prepare": "npm run build",
     "test": "jest",
-    "build": "tsc -w"
+    "build": "tsc",
+    "dev": "tsc -w"
   },
   "keywords": [
     "vault",
     "rbac"
   ],
-  "author": "Braulio Aguilar <braulio@bedu.org>",
-  "license": "ISC",
+  "private": true,
+  "author": "Exponential",
   "dependencies": {
     "firebase-admin": "^8.11.0",
     "node-fetch": "^2.6.0",
