@@ -7,6 +7,5 @@
     "sourceMap": true,
     "outDir": "./dist"
   },
-  "include": ["./src/*.ts", "./src/interfaces/rbac.interface.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules"]
 }
