@@ -14,7 +14,7 @@
     "rbac"
   ],
   "private": true,
-  "author": "Exponential",
+  "author": "ExponentialEducation",
   "dependencies": {
     "firebase-admin": "^8.11.0",
     "node-fetch": "^2.6.0",

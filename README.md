@@ -21,7 +21,7 @@ const granted = rbac.authorizer(headers, method, path);
 $ git clone git@github.com:ExponentialEducation/js-rbac.git
 $ cd project & npm install
 $ yarn build
-$ cd test & yarn test
+$ FIREBASE_PROJECTID="auth_test" FIREBASE_CLIENTEMAIL="firebase_test@authdemo.iam.gserviceaccount.com" FIREBASE_PRIVATEKEY="-----PRIVATE KEY-----" yarn test
 ```
 
 ## Examples
