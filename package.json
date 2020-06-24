@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A middleware to authorizer paths with Vault, main functions as READ, WRITE, DELETE.",
   "main": "dist/rbac.js",
+  "types": "dist/rbac.d.ts",
   "scripts": {
     "prepare": "npm run build",
     "test": "jest",
@@ -12,6 +13,9 @@
   "keywords": [
     "vault",
     "rbac"
+  ],
+  "files": [
+    "dist"
   ],
   "private": true,
   "author": "ExponentialEducation",
